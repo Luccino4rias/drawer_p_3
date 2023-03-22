@@ -45,13 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
               // <-- SEE HERE
               decoration: BoxDecoration(color: const Color(0xff764abc)),
               accountName: Text(
-                "Pinkesh Darji",
+                "Lucino Roberto",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               accountEmail: Text(
-                "pinkesh.earth@gmail.com",
+                "a.20308051280582@cbtis128.edu.mx",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
