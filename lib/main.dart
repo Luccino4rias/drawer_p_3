@@ -30,7 +30,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Scaffold(
+      key: _key,
       appBar: AppBar(
         centerTitle: true,
         title: Text('Drawer Rarias'),
@@ -85,10 +87,43 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pop(context);
               },
             ),
+            AboutListTile(
+              // <-- SEE HERE
+              icon: Icon(
+                Icons.info,
+              ),
+              child: Text('About app'),
+              applicationIcon: Icon(
+                Icons.local_play,
+              ),
+              applicationName: 'My Cool App',
+              applicationVersion: '1.0.25',
+              applicationLegalese: '© 2019 Company',
+              aboutBoxChildren: [
+                ///Content goes here...
+              ],
+            ),
           ],
         ),
       ),
-      body: Center(),
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 50,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _key.currentState!.openDrawer(); //<-- SEE HERE
+              },
+              child: const Text(
+                'Elevated Button 1',
+                style: TextStyle(fontSize: 24),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
